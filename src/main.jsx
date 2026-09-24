@@ -201,7 +201,6 @@ function App() {
   const [showSource, setShowSource] = useState(false);
   const [activePhoto, setActivePhoto] = useState(null);
   const [showMusic, setShowMusic] = useState(true);
-  const [loadMusicPlayer, setLoadMusicPlayer] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
   const [checked, setChecked] = useState(() => {
     try { return JSON.parse(localStorage.getItem('mala-checklist')) || {}; } catch { return {}; }
@@ -443,24 +442,19 @@ function App() {
               </div>
               <button onClick={() => setShowMusic(false)} aria-label="收起音乐播放器"><X size={17} /></button>
             </div>
-            {loadMusicPlayer ? (
-              <iframe
-                title="Penny《打火机》网易云音乐官方播放器"
-                frameBorder="0"
-                width="100%"
-                height="86"
-                src="https://music.163.com/outchain/player?type=2&id=2712265619&auto=0&height=66"
-                allow="autoplay"
-              />
-            ) : (
-              <button className="music-load" onClick={() => setLoadMusicPlayer(true)}>
-                <span><Play size={17} fill="currentColor" /></span>
-                <span><strong>加载网易云播放器</strong><small>点击后加载 · 不自动播放</small></span>
-              </button>
-            )}
+            <a
+              className="music-load"
+              href="https://music.douyin.com/qishui/share/track?track_id=7512402632118503441"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="在汽水音乐打开 Penny《打火机》"
+            >
+              <span><Play size={17} fill="currentColor" /></span>
+              <span><strong>在汽水音乐播放</strong><small>抖音官方歌曲页 · 点击打开</small></span>
+              <ArrowRight className="music-arrow" size={17} />
+            </a>
             <div className="music-links">
-              <span>无法内嵌播放时：</span>
-              <a href="https://music.163.com/song?id=2712265619" target="_blank" rel="noreferrer">打开网易云音乐</a>
+              <span>将在新页面打开，不影响当前行程</span>
             </div>
           </div>
         ) : (
