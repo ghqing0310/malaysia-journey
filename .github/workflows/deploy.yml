@@ -30,7 +30,7 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      - run: npm install --package-lock=false --registry=https://registry.npmjs.org
       - run: npm run build
 
       - uses: actions/configure-pages@v5
