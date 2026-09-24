@@ -447,7 +447,7 @@ function App() {
               <div className="music-video">
                 <iframe
                   title="Penny《打火机》抖音视频播放器"
-                  src="https://open.douyin.com/player/video?vid=7554735972895804699&autoplay=0"
+                  src="https://open.douyin.com/player/video?vid=7552117487085735228&autoplay=0"
                   allow="autoplay; encrypted-media; picture-in-picture"
                   allowFullScreen
                 />
@@ -461,7 +461,7 @@ function App() {
             )}
             <div className="music-links">
               <span>备用入口：</span>
-              <a href="https://www.douyin.com/video/7554735972895804699" target="_blank" rel="noreferrer">抖音</a>
+              <a href="https://www.douyin.com/video/7552117487085735228" target="_blank" rel="noreferrer">抖音</a>
               <a href="https://music.douyin.com/qishui/share/track?track_id=7512402632118503441" target="_blank" rel="noreferrer">汽水音乐</a>
             </div>
           </div>
