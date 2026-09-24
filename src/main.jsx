@@ -201,6 +201,7 @@ function App() {
   const [showSource, setShowSource] = useState(false);
   const [activePhoto, setActivePhoto] = useState(null);
   const [showMusic, setShowMusic] = useState(true);
+  const [loadDouyinPlayer, setLoadDouyinPlayer] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
   const [checked, setChecked] = useState(() => {
     try { return JSON.parse(localStorage.getItem('mala-checklist')) || {}; } catch { return {}; }
@@ -442,19 +443,26 @@ function App() {
               </div>
               <button onClick={() => setShowMusic(false)} aria-label="收起音乐播放器"><X size={17} /></button>
             </div>
-            <a
-              className="music-load"
-              href="https://music.douyin.com/qishui/share/track?track_id=7512402632118503441"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="在汽水音乐打开 Penny《打火机》"
-            >
-              <span><Play size={17} fill="currentColor" /></span>
-              <span><strong>在汽水音乐播放</strong><small>抖音官方歌曲页 · 点击打开</small></span>
-              <ArrowRight className="music-arrow" size={17} />
-            </a>
+            {loadDouyinPlayer ? (
+              <div className="music-video">
+                <iframe
+                  title="Penny《打火机》抖音视频播放器"
+                  src="https://open.douyin.com/player/video?vid=7554735972895804699&autoplay=0"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <button className="music-load" onClick={() => setLoadDouyinPlayer(true)}>
+                <span><Play size={17} fill="currentColor" /></span>
+                <span><strong>在当前页播放</strong><small>抖音视频版 · 点击加载</small></span>
+                <ArrowRight className="music-arrow" size={17} />
+              </button>
+            )}
             <div className="music-links">
-              <span>将在新页面打开，不影响当前行程</span>
+              <span>备用入口：</span>
+              <a href="https://www.douyin.com/video/7554735972895804699" target="_blank" rel="noreferrer">抖音</a>
+              <a href="https://music.douyin.com/qishui/share/track?track_id=7512402632118503441" target="_blank" rel="noreferrer">汽水音乐</a>
             </div>
           </div>
         ) : (

@@ -219,6 +219,8 @@ footer { padding-block: 48px; border-top: 1px solid var(--line); background: #ec
 .music-disc { display: grid; place-items: center; width: 32px; height: 32px; color: #fffdf6; background: var(--ink); border-radius: 50%; }
 .music-panel-head > button { display: grid; place-items: center; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
 .music-panel-head > button:hover { background: #ece8dd; }
+.music-video { width: 100%; max-height: 56vh; overflow: hidden; border-radius: 12px; background: #202422; aspect-ratio: 9 / 13; }
+.music-video iframe { display: block; width: 100%; height: 100%; border: 0; }
 .music-load { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 72px; padding: 12px 15px; border: 0; border-radius: 10px; color: #f8f4e9; background: linear-gradient(135deg, #202927, #3e4f48); text-align: left; text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
 .music-load > span:first-child { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 50%; color: #202927; background: linear-gradient(135deg, #76efe1, #ff7fa9); }
 .music-load > span:last-child { display: flex; flex-direction: column; }
@@ -321,6 +323,7 @@ footer { padding-block: 48px; border-top: 1px solid var(--line); background: #ec
   .footer-inner p { order: 3; }
   .music-dock { right: 12px; bottom: 12px; left: 12px; }
   .music-panel { width: 100%; }
+  .music-video { max-height: 54vh; }
   .music-fab { margin-left: auto; }
   .modal-backdrop { padding: 12px; }
   .source-modal { padding: 16px; }
